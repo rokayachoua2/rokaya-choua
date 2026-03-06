@@ -10,7 +10,6 @@ export default function Projects() {
                         <div className="pill">Portfolio</div>
                         <h3>Projects</h3>
                     </div>
-                    {/* <p>Découvrez une sélection de mes récents travaux. J'aime concevoir des applications performantes, esthétiques et faciles à utiliser.</p> */}
                 </div>
 
                 <div className="grid">
