@@ -1,6 +1,6 @@
 import portfolio from '../assets/portfolio.png';
 import wmcollection from '../assets/wmcollection.png';
-import MondeBijoux from '../assets/MondeBijoux.png';
+import MondeBijoux from '../assets/mondeBijoux.png';
 export default function Projects() {
     return (
         <section id="projects">
