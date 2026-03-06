@@ -1,6 +1,6 @@
 import portfolio from '../assets/portfolio.png';
 import wmcollection from '../assets/wmcollection.png';
-import MondeBijoux from '../assets/mondeBijoux.png';
+import mondebijoux from '../assets/mondebijoux.png';
 export default function Projects() {
     return (
         <section id="projects">
@@ -31,7 +31,7 @@ export default function Projects() {
 
                     <div className="card pad project">
                         <div className="thumb">
-                         <img src={mondeBijoux} alt="MondeBijoux" fetchPriority="high" decoding="async" />
+                         <img src={mondebijoux} alt="MondeBijoux" fetchPriority="high" decoding="async" />
 
                         </div>
                         <h4>MondeBijoux (Symfony)</h4>
