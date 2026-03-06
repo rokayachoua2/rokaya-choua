@@ -31,7 +31,7 @@ export default function Projects() {
 
                     <div className="card pad project">
                         <div className="thumb">
-                         <img src={MondeBijoux} alt="MondeBijoux" fetchPriority="high" decoding="async" />
+                         <img src={mondeBijoux} alt="MondeBijoux" fetchPriority="high" decoding="async" />
 
                         </div>
                         <h4>MondeBijoux (Symfony)</h4>
