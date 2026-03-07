@@ -1,9 +1,40 @@
+import { useState } from 'react';
+
 const LINKEDIN_URL = "https://www.linkedin.com/in/rokaya";
 const GITHUB_URL = "https://github.com/rokayachoua2";
 const EMAIL = "rokaya.choua2@gmail.com";
 const PHONE = "+212 763-109747";
 
 export default function Contact() {
+    const [result, setResult] = useState("");
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        setResult("Envoi en cours...");
+
+        const formData = new FormData(event.target);
+        formData.append("access_key", "705d981a-b7bd-447d-8aeb-26f68942ebb6");
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setResult("Message envoyé avec succès !");
+                event.target.reset();
+            } else {
+                console.error("Erreur Web3Forms:", data);
+                setResult(data.message || "Une erreur est survenue lors de l'envoi.");
+            }
+        } catch (error) {
+            console.error("Erreur Fetch:", error);
+            setResult("Une erreur est survenue lors de l'envoi.");
+        }
+    };
     return (
         <section id="contact">
             <div className="container">
@@ -53,14 +84,20 @@ export default function Contact() {
 
                     <div className="card pad">
                         <h4 style={{ marginBottom: '10px' }}>Envoyer un message</h4>
-                        {/* Connect this form using Formspree (https://formspree.io) by changing action="#" to your form URL */}
-                        <form action={`mailto:${EMAIL}`} method="post" encType="text/plain">
+                        <form onSubmit={onSubmit}>
                             <input type="text" name="Nom" placeholder="Votre nom" required />
                             <input type="email" name="Email" placeholder="Votre email" required />
                             <input type="text" name="Sujet" placeholder="Sujet" required />
                             <textarea name="Message" placeholder="Votre message..." required></textarea>
-                            <button className="btn primary" type="submit">Envoyer via Email</button>
+                            <button className="btn primary" type="submit" disabled={result === "Envoi en cours..."}>
+                                {result === "Envoi en cours..." ? "Envoi..." : "Envoyer le message"}
+                            </button>
                         </form>
+                        {result && (
+                            <p style={{ marginTop: '15px', color: result.includes('succès') ? 'green' : (result === 'Envoi en cours...' ? '#666' : 'red') }}>
+                                {result}
+                            </p>
+                        )}
                     </div>
                 </div>
             </div>
