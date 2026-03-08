@@ -26,7 +26,7 @@ export default function Experience() {
                         </div>
                     </div>
 
-                    <div className="t-item">
+                    {/* <div className="t-item">
                         <div className="t-date">Mai 2025 - Juil 2025</div>
                         <div className="t-content">
                             <h4>Site e-commerce WM_Collection</h4>
@@ -39,7 +39,7 @@ export default function Experience() {
                                 <span className="tag">PHP</span><span className="tag">MySQL</span><span className="tag">HTML</span><span className="tag">CSS</span><span className="tag">JavaScript</span>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>

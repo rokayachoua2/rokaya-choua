@@ -79,7 +79,13 @@ nav a.active::after{
 section{scroll-margin-top: calc(var(--header-h) + 14px);}
 
 /* ====== Layout helpers ====== */
-.container{padding: 0 9%;}
+/* .container{padding: 0 9%;}*/
+.container{
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+} 
 section{padding: 80px 0;}
 .section-head{
   display:flex;align-items:flex-end;justify-content:space-between;
