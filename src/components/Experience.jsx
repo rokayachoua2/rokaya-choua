@@ -16,8 +16,8 @@ export default function Experience() {
                         <div className="t-content">
                             <h4>Stage - Développement Web (Symfony)</h4>
                             <p>
-                                <strong>Pixcod Agency</strong> &bull; Nador, Maroc<br /><br />
-                                &bull; Développement d'une application e-commerce avec Symfony et Twig, intégrant une interface d'administration pour la gestion des produits et des catégories.<br /><br />
+                                <strong>Pixcod Agency</strong> &bull; Nador, Maroc<br />
+                                &bull; Développement d'une application e-commerce avec Symfony et Twig, intégrant une interface d'administration pour la gestion des produits et des catégories.<br />
                                 &bull; Contribution à l'amélioration du tableau de bord admin, rendant la gestion du contenu plus rapide et intuitive pour l'équipe.
                             </p>
                             <div className="t-tags">
@@ -26,20 +26,27 @@ export default function Experience() {
                         </div>
                     </div>
 
-                    {/* <div className="t-item">
-                        <div className="t-date">Mai 2025 - Juil 2025</div>
+                    <div className="t-item">
+                        <div className="t-date">fevrier 2025 - aujourd'hui</div>
                         <div className="t-content">
-                            <h4>Site e-commerce WM_Collection</h4>
+                            <h4>QA Testing intern</h4>
                             <p>
-                                <strong>OFPPT - CMC Oriental</strong> &bull; <a href="https://github.com/rokayachoua2/wm_collection" target="_blank" rel="noreferrer">github.com/rokayachoua2/wm_collection</a><br /><br />
-                                &bull; Développement complet d’un site e-commerce intégrant une interface client (inscription, connexion, panier, commande) et un tableau de bord administrateur pour la gestion des produits.<br /><br />
-                                &bull; Mise en place d’une base de données relationnelle optimisée (produits, utilisateurs, commandes) et d’un affichage dynamique du stock, améliorant la performance et la clarté du site.
+                                <strong>LibertyPay</strong> <br />
+                                &bull; Worked on testing a financial web and mobile application related to salary advance services.
+                                <br />
+                                &bull; Executed functional and user flow tests (employee creation, approval workflow, salary advance requests, transactions and reports).
+                                <br />
+                                &bull; Identified and reported defects in the UAT defect tracking sheet.
+                                <br />
+                                &bull; Verified application behaviour using browser developer tools.
+                                <br />
+                                &bull; Collaborated with developers to reproduce and track bugs.
                             </p>
                             <div className="t-tags">
-                                <span className="tag">PHP</span><span className="tag">MySQL</span><span className="tag">HTML</span><span className="tag">CSS</span><span className="tag">JavaScript</span>
+                                <span className="tag">QA Testing</span><span className="tag">UAT Testing</span><span className="tag">Bug Tracking</span><span className="tag">Web Application Testing</span><span className="tag">Quality Assurance (QA)</span>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </section>
