@@ -1,21 +1,24 @@
+import { useLanguage } from '../context/LanguageContext';
+
 export default function Education() {
+    const { t } = useLanguage();
+
     return (
         <section id="education">
             <div className="container">
                 <div className="section-head">
                     <div>
-                        <div className="pill">Parcours</div>
-                        <h3>Education</h3>
+                        <div className="pill">{t('edu.pill')}</div>
+                        <h3>{t('edu.title')}</h3>
                     </div>
-                    {/* <p>Mon parcours académique et les certifications qui valident mes compétences techniques.</p> */}
                 </div>
 
                 <div className="timeline">
                     <div className="t-item">
-                        <div className="t-date">2024 – 2026</div>
+                        <div className="t-date">{t('edu.ofppt.date')}</div>
                         <div className="t-content">
-                            <h4>OFPPT – Développement Digital (Web Full-Stack)</h4>
-                            <p>Modules: HTML/CSS/JS, PHP/MySQL, UML, React, Laravel.</p>
+                            <h4>{t('edu.ofppt.title')}</h4>
+                            <p>{t('edu.ofppt.desc')}</p>
                             <div className="t-tags">
                                 <span className="tag">Web</span><span className="tag">PHP</span><span className="tag">MySQL</span><span className="tag">React</span><span className="tag">Laravel</span>
                             </div>
@@ -23,10 +26,10 @@ export default function Education() {
                     </div>
 
                     <div className="t-item">
-                        <div className="t-date">2024</div>
+                        <div className="t-date">{t('edu.bac.date')}</div>
                         <div className="t-content">
-                            <h4>Baccalauréat – Option science Physique</h4>
-                            <p>Lycée Nador. Option science Physique avec mention Bien .</p>
+                            <h4>{t('edu.bac.title')}</h4>
+                            <p>{t('edu.bac.desc')}</p>
                             <div className="t-tags">
                                 <span className="tag">Physique</span>
                             </div>

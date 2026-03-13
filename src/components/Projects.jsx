@@ -1,14 +1,18 @@
+import { useLanguage } from '../context/LanguageContext';
 import portfolio from '../assets/portfolio.png';
 import wmcollection from '../assets/wmcollection.png';
 import mondbijoux from '../assets/mondbijoux.png';
+
 export default function Projects() {
+    const { t } = useLanguage();
+
     return (
         <section id="projects">
             <div className="container">
                 <div className="section-head">
                     <div>
-                        <div className="pill">Portfolio</div>
-                        <h3>Projects</h3>
+                        <div className="pill">{t('proj.pill')}</div>
+                        <h3>{t('proj.title')}</h3>
                     </div>
                 </div>
 
@@ -19,7 +23,7 @@ export default function Projects() {
 
                         </div>
                         <h4>wm_collection (PHP)</h4>
-                        <p>Site e-commerce avec panier, commandes et dashboard admin.</p>
+                        <p>{t('proj.wm.desc')}</p>
                         <div className="t-tags" style={{ marginBottom: '12px' }}>
                             <span className="tag">PHP</span><span className="tag">MySQL</span><span className="tag">HTML</span><span className="tag">CSS</span><span className="tag">JS</span>
                         </div>
@@ -34,7 +38,7 @@ export default function Projects() {
 
                         </div>
                         <h4>MondeBijoux (Symfony)</h4>
-                        <p>Admin dashboard, CRUD produits & catégories, validation formulaires, authentification & rôles utilisateurs.</p>
+                        <p>{t('proj.monde.desc')}</p>
                         <div className="t-tags" style={{ marginBottom: '12px' }}>
                             <span className="tag">Symfony</span>
                         </div>
@@ -49,7 +53,7 @@ export default function Projects() {
                             
                         </div>
                         <h4>Portfolio  </h4>
-                        <p>Portfolio moderne avec sections, animations et responsive.</p>
+                        <p>{t('proj.port.desc')}</p>
                         <div className="t-tags" style={{ marginBottom: '12px' }}>
                             <span className="tag">HTML</span><span className="tag">CSS</span><span className="tag">JS</span>
                         </div>

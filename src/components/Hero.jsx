@@ -1,24 +1,27 @@
 import { useTypingEffect } from '../hooks/useTypingEffect';
+import { useLanguage } from '../context/LanguageContext';
 import imgPlaceholder from '../assets/img.png';
-
-const ROLES = [
-    "Développement web Full stack",
-    "Front-end (HTML, CSS, JS)",
-    "Back-end (PHP, MySQL)",
-    "Disponible pour stage PFE"
-];
 
 const GITHUB_URL = "https://github.com/rokaya";
 const LINKEDIN_URL = "https://www.linkedin.com/in/rokaya";
 
 export default function Hero() {
+    const { t } = useLanguage();
+
+    const ROLES = [
+        t('hero.role.1'),
+        t('hero.role.2'),
+        t('hero.role.3'),
+        t('hero.role.4')
+    ];
+
     const typedText = useTypingEffect(ROLES);
 
     return (
         <section className="hero" id="home">
             <div className="hero-content">
-                <div className="badge" aria-label="Statut">Disponible pour opportunités en développement web / collaboration</div>
-                <h1>Hi, je suis <span className="highlight">Rokaya</span></h1>
+                <div className="badge" aria-label="Statut">{t('hero.badge')}</div>
+                <h1>{t('hero.greeting')}<span className="highlight">Rokaya</span></h1>
 
                 <div className="role" aria-live="polite">
                     <span className="typing" id="typing">{typedText}</span>
@@ -26,12 +29,12 @@ export default function Hero() {
                 </div>
 
                 <p className="desc">
-                    Technicienne spécialisée en développement digital, en cours de formation, je suis à la recherche d'un stage de fin d'études (PFE). Passionnée par le développement web, motivée et dotée d’une réelle volonté d’apprentissage, je souhaite intégrer un environnement professionnel stimulant afin de consolider mes compétences et enrichir mon expérience pratique.
+                    {t('hero.desc')}
                 </p>
 
                 <div className="actions">
-                    <a className="btn primary" href="#projects">Voir mes projets</a>
-                    <a className="btn" href="#contact">Me contacter</a>
+                    <a className="btn primary" href="#projects">{t('hero.btn.projects')}</a>
+                    <a className="btn" href="#contact">{t('hero.btn.contact')}</a>
                 </div>
 
                 <div className="social">
@@ -47,7 +50,7 @@ export default function Hero() {
                     </div>
                 </div>
                 <div className="mini">
-                    <div className="item"><strong>+10</strong><span>Projets</span></div>
+                    <div className="item"><strong>+10</strong><span>{t('hero.stats.projects')}</span></div>
                     <div className="item"><strong>Frontend</strong><span>HTML/CSS/JS/React</span></div>
                     <div className="item"><strong>Backend</strong><span>PHP/MySQL/Laravel</span></div>
                 </div>

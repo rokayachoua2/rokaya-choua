@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/rokaya";
 const GITHUB_URL = "https://github.com/rokayachoua2";
@@ -6,11 +7,12 @@ const EMAIL = "rokaya.choua2@gmail.com";
 const PHONE = "+212 763-109747";
 
 export default function Contact() {
+    const { t } = useLanguage();
     const [result, setResult] = useState("");
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        setResult("Envoi en cours...");
+        setResult(t('contact.form.sending'));
 
         const formData = new FormData(event.target);
         formData.append("access_key", "705d981a-b7bd-447d-8aeb-26f68942ebb6");
@@ -24,15 +26,15 @@ export default function Contact() {
             const data = await response.json();
 
             if (data.success) {
-                setResult("Message envoyé avec succès !");
+                setResult(t('contact.form.success'));
                 event.target.reset();
             } else {
                 console.error("Erreur Web3Forms:", data);
-                setResult(data.message || "Une erreur est survenue lors de l'envoi.");
+                setResult(data.message || t('contact.form.error'));
             }
         } catch (error) {
             console.error("Erreur Fetch:", error);
-            setResult("Une erreur est survenue lors de l'envoi.");
+            setResult(t('contact.form.error'));
         }
     };
     return (
@@ -40,17 +42,15 @@ export default function Contact() {
             <div className="container">
                 <div className="section-head">
                     <div>
-                        <div className="pill">Contact</div>
-                        <h3>Travaillons ensemble</h3>
+                        <div className="pill">{t('contact.pill')}</div>
+                        <h3>{t('contact.title')}</h3>
                     </div>
-                    {/* <p>Vous avez un projet en tête ou une opportunité de stage ? Remplissez ce formulaire et je vous répondrai
-                        dans les plus brefs délais.</p> */}
                 </div>
 
                 <div className="grid">
                     <div className="card pad contact-info">
-                        <h4>Infos</h4>
-                        <p>Je suis ouverte à un stage PFE / pré-embauche. N’hésite pas à me contacter.</p>
+                        <h4>{t('contact.info.title')}</h4>
+                        <p>{t('contact.info.desc')}</p>
 
                         <div className="contact-box">
                             <div className="c-row">
@@ -62,7 +62,7 @@ export default function Contact() {
                                 <span>{PHONE}</span>
                             </div>
                             <div className="c-row">
-                                <strong>Ville</strong>
+                                <strong>{t('contact.city')}</strong>
                                 <span>Nador, Maroc</span>
                             </div>
                             <div className="c-row">
@@ -83,18 +83,18 @@ export default function Contact() {
                     </div>
 
                     <div className="card pad">
-                        <h4 style={{ marginBottom: '10px' }}>Envoyer un message</h4>
+                        <h4 style={{ marginBottom: '10px' }}>{t('contact.form.title')}</h4>
                         <form onSubmit={onSubmit}>
-                            <input type="text" name="Nom" placeholder="Votre nom" required />
-                            <input type="email" name="Email" placeholder="Votre email" required />
-                            <input type="text" name="Sujet" placeholder="Sujet" required />
-                            <textarea name="Message" placeholder="Votre message..." required></textarea>
-                            <button className="btn primary" type="submit" disabled={result === "Envoi en cours..."}>
-                                {result === "Envoi en cours..." ? "Envoi..." : "Envoyer le message"}
+                            <input type="text" name="Nom" placeholder={t('contact.form.name')} required />
+                            <input type="email" name="Email" placeholder={t('contact.form.email')} required />
+                            <input type="text" name="Sujet" placeholder={t('contact.form.subject')} required />
+                            <textarea name="Message" placeholder={t('contact.form.message')} required></textarea>
+                            <button className="btn primary" type="submit" disabled={result === t('contact.form.sending')}>
+                                {result === t('contact.form.sending') ? t('contact.form.sending') : t('contact.form.submit')}
                             </button>
                         </form>
                         {result && (
-                            <p style={{ marginTop: '15px', color: result.includes('succès') ? 'green' : (result === 'Envoi en cours...' ? '#666' : 'red') }}>
+                            <p style={{ marginTop: '15px', color: result === t('contact.form.success') ? 'green' : (result === t('contact.form.sending') ? '#666' : 'red') }}>
                                 {result}
                             </p>
                         )}

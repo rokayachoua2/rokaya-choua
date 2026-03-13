@@ -1,50 +1,50 @@
+import { useLanguage } from '../context/LanguageContext';
+
 export default function Services() {
+    const { t } = useLanguage();
+
     return (
         <section id="services">
             <div className="container">
                 <div className="section-head">
                     <div>
-                        <div className="pill">Ce que je peux faire</div>
-                        <h3>Services</h3>
+                        <div className="pill">{t('services.pill')}</div>
+                        <h3>{t('services.title')}</h3>
                     </div>
-                    {/* <p>
-                        Je réalise des interfaces modernes, des sites dynamiques et des fonctionnalités back-end.
-                        Objectif: un rendu propre, rapide et responsive.
-                    </p> */}
                 </div>
 
                 <div className="grid">
                     <div className="card pad service">
                         <div className="top">
                             <div>
-                                <h4>UI / Intégration</h4>
+                                <h4>{t('services.ui.title')}</h4>
                                 <small style={{ color: 'rgba(255,255,255,.6)' }}>HTML • CSS • Bootstrap</small>
                             </div>
                             <div className="icon">UI</div>
                         </div>
-                        <p>Pages responsive, sections portfolio, landing pages, animations simples et design propre.</p>
+                        <p>{t('services.ui.desc')}</p>
                     </div>
 
                     <div className="card pad service">
                         <div className="top">
                             <div>
-                                <h4>Web dynamique</h4>
+                                <h4>{t('services.js.title')}</h4>
                                 <small style={{ color: 'rgba(255,255,255,.6)' }}>JavaScript</small>
                             </div>
                             <div className="icon">JS</div>
                         </div>
-                        <p>Interactions (menu, modal, sliders), validation de formulaires, fetch API, composants UI.</p>
+                        <p>{t('services.js.desc')}</p>
                     </div>
 
                     <div className="card pad service">
                         <div className="top">
                             <div>
-                                <h4>Back-end & Base de données</h4>
+                                <h4>{t('services.be.title')}</h4>
                                 <small style={{ color: 'rgba(255,255,255,.6)' }}>PHP • MySQL</small>
                             </div>
                             <div className="icon">BE</div>
                         </div>
-                        <p>CRUD, authentification, gestion produits/commandes, dashboards admin, relations DB.</p>
+                        <p>{t('services.be.desc')}</p>
                     </div>
                 </div>
             </div>
